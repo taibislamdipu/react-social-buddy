@@ -17,7 +17,7 @@ const Post = (props) => {
             <p>Id: {id}</p>
             <h2>Title: {title}</h2>
             <p>{body}</p>
-            <p><Link to={`/post=${id}`}>See more of {id}</Link></p>
+            <p><Link to={`/post/${id}`}>See more of {id}</Link></p>
         </div>
     );
 

@@ -12,6 +12,7 @@ import {
 import Home from './components/Home/Home';
 import NoMatch from './components/NoMatch/NoMatch'
 import Comment from './components/Comment/Comment';
+import PostComment from './components/PostComment/PostComment';
 
 
 
