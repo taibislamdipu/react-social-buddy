@@ -17,7 +17,7 @@ const useStyles = makeStyles({
         margin: '20px',
     },
     media: {
-        height: 140,
+        height: '250px',
     },
 });
 
@@ -30,7 +30,6 @@ const Comment = () => {
 
     // console.log('clicked post id', id); 
     // random user api id
-
     const [comments, setComments] = useState([]);
 
     // console.log('clicked post comments', comments);
@@ -39,7 +38,7 @@ const Comment = () => {
 
     console.log('clicked post details', post);
 
-
+    const { title, body } = post;
 
     useEffect(() => {
         const cmt_url = `https://jsonplaceholder.typicode.com/comments?postId=${id}`;
@@ -59,47 +58,38 @@ const Comment = () => {
 
     }, [])
 
-    // const { title, body } = props.post;
 
     return (
-        <div>
-            <Card className={classes.root}>
-                <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        image="https://blog.codemagic.io/uploads/2020/08/codemagic-blog-how-to-build-react-native-ui-app-with-material-ui.png"
-                        title="Contemplative Reptile"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            {post.title}
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                            {post.body}
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-                <CardActions>
-                    <Button size="small" color="primary">
-                        Share
-        </Button>
-                    <Button size="small" color="primary">
-                        Learn More
-        </Button>
-                </CardActions>
-            </Card>
 
-            <Card className={classes.root}>
-                {/* <h2>Ths is comments of user id: {id}</h2> */}
-                {/* <h1>{post.title}</h1> */}
-                {/* <h2>{post.body}</h2> */}
-                <h1>Post Comments</h1>
-                <hr />
-                {
-                    comments.map(comment => <PostComment comment={comment}></PostComment>)
-                }
-            </Card>
-        </div>
+        <Card className={classes.root}>
+            <CardActionArea>
+                <CardMedia
+                    className={classes.media}
+                    image="https://blog.codemagic.io/uploads/2020/08/codemagic-blog-how-to-build-react-native-ui-app-with-material-ui.png"
+                    title="Contemplative Reptile"
+                />
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                        <h1>{title}</h1>
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        {body}
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, quasi rerum et voluptas iusto perspiciatis dolorem incidunt totam velit ad ullam maxime ut sed, aut, exercitationem mollitia debitis numquam nemo!</p>
+                        <p>Olor sit amet, consectetur adipisicing elit. Dolorum, quasi rerum et voluptas iusto perspiciatis dolorem incidunt totam velit ad ullam maxime ut sed, aut, exercitationem mollitia debitis numquam nemo!</p>
+                    </Typography>
+                </CardContent>
+            </CardActionArea>
+            <CardActions>
+                <Button size="small" color="primary" onClick={() => alert('Share feature Comming Soon !!!')}>
+                    Share
+                    </Button>
+            </CardActions>
+            <h2>Post Comments</h2>
+            <hr />
+            {
+                comments.map(comment => <PostComment comment={comment}></PostComment>)
+            }
+        </Card>
     );
 };
 

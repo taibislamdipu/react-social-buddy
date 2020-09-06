@@ -19,10 +19,15 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { Button } from '@material-ui/core';
 
+import './Post.css';
+
 const useStyles = makeStyles((theme) => ({
     root: {
         maxWidth: 500,
-        margin: '20px',
+        margin: 'auto',
+        marginTop: '20px',
+
+
     },
     media: {
         height: 0,
@@ -54,21 +59,7 @@ const Post = (props) => {
         setExpanded(!expanded);
     };
 
-    // const postStyle = {
-    //     border: '3px solid lightgrey',
-    //     margin: '20px',
-    //     padding: '20px',
-    //     borderRadius: '10px',
-    // }
-
     return (
-        // <div>
-        //     <p>UserId: {userId}</p>
-        //     <p>Id: {id}</p>
-        //     <h2>Title: {title}</h2> 
-        //     <p>{body}</p>
-        //     <p><Link to={`/post/${id}`}>See more of {id}</Link></p>
-        // </div>
 
         <Card className={classes.root}>
             <CardHeader
@@ -87,7 +78,7 @@ const Post = (props) => {
             />
             <CardMedia
                 className={classes.media}
-                image="https://blog.codemagic.io/uploads/2020/08/codemagic-blog-how-to-build-react-native-ui-app-with-material-ui.png"
+                image='https://i.imgur.com/EYTYgQJ.png'
                 title={title}
             />
             <CardContent>
@@ -134,6 +125,7 @@ const Post = (props) => {
                 </CardContent>
             </Collapse>
         </Card>
+
 
     );
 
