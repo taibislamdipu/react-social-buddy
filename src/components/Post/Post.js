@@ -19,14 +19,11 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { Button } from '@material-ui/core';
 
-import './Post.css';
-
 const useStyles = makeStyles((theme) => ({
     root: {
         maxWidth: 500,
         margin: 'auto',
         marginTop: '20px',
-
 
     },
     media: {
@@ -63,18 +60,14 @@ const Post = (props) => {
 
         <Card className={classes.root}>
             <CardHeader
-                avatar={
-                    <Avatar aria-label="recipe" className={classes.avatar}>
-                        R
-                    </Avatar>
-                }
+
                 action={
                     <IconButton aria-label="settings" onClick={() => alert('Settings Features Coming Soon !!!')}>
                         <MoreVertIcon />
                     </IconButton>
                 }
                 title={title.toUpperCase()}
-                subheader=""
+            // subheader=""
             />
             <CardMedia
                 className={classes.media}

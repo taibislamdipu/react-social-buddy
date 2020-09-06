@@ -1,3 +1,6 @@
+
+// coded by - taib islam dipu, 6 sept 2020
+
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
@@ -15,31 +18,32 @@ import Comment from './components/Comment/Comment';
 
 function App() {
 
-
-
   return (
 
-    <Router>
-      <Switch>
+    <div className="bodyStyle">
 
-        <Route path="/home">
-          <Home></Home>
-        </Route>
+      <Router>
+        <Switch>
 
-        <Route exact path="/">
-          <Home></Home>
-        </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
 
-        <Route path="/post/:id">
-          <Comment></Comment>
-        </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
 
-        <Route path="*">
-          <NoMatch></NoMatch>
-        </Route>
+          <Route path="/post/:id">
+            <Comment />
+          </Route>
 
-      </Switch>
-    </Router>
+          <Route path="*">
+            <NoMatch />
+          </Route>
+
+        </Switch>
+      </Router>
+    </div>
 
   );
 }

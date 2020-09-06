@@ -13,8 +13,12 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
     root: {
-        maxWidth: 'auto',
-        margin: '20px',
+        // maxWidth: 'auto',
+        // margin: '20px',
+
+        width: '800px',
+        margin: 'auto',
+
     },
     media: {
         height: '250px',
@@ -59,9 +63,11 @@ const Comment = () => {
     }, [])
 
 
+
     return (
 
         <Card className={classes.root}>
+
             <CardActionArea>
                 <CardMedia
                     className={classes.media}
@@ -90,6 +96,7 @@ const Comment = () => {
                 comments.map(comment => <PostComment comment={comment}></PostComment>)
             }
         </Card>
+
     );
 };
 

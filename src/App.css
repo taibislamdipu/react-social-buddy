@@ -1,4 +1,9 @@
+.bodyStyle{
+  background-image: linear-gradient(to right, #56b2c7, #099EB1);
+}
+
 /* .App {
+  background-color: #282c34;
   text-align: center;
 }
 
