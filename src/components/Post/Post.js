@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -56,6 +56,13 @@ const Post = (props) => {
         setExpanded(!expanded);
     };
 
+    const [likeColor, setLikeColor] = useState('');
+
+    const handleLike = () => {
+        const color = likeColor ? '' : 'primary';
+        setLikeColor(color);
+    }
+
     return (
 
         <Card className={classes.root}>
@@ -80,9 +87,11 @@ const Post = (props) => {
                 </Typography>
             </CardContent>
             <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites" onClick={() => alert('Add to favorites.')}>
+
+                <IconButton aria-label="add to favorites" onClick={handleLike} color={likeColor}>
                     <FavoriteIcon />
                 </IconButton>
+
                 <IconButton aria-label="share" onClick={() => alert('Sharing Features Coming Soon !!!')}>
                     <ShareIcon />
                 </IconButton>

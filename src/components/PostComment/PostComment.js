@@ -38,6 +38,13 @@ const PostComment = (props) => {
 
     }, [])
 
+    const [likeColor, setLikeColor] = useState('');
+
+    const handleLike = () => {
+        const color = likeColor ? '' : 'primary';
+        setLikeColor(color);
+    }
+
     return (
 
         <List className={classes.root}>
@@ -69,7 +76,7 @@ const PostComment = (props) => {
                             <Typography>
                                 {body}
                             </Typography>
-                            <IconButton aria-label="Like Comment" onClick={() => alert('Thanks for like this comments.')}>
+                            <IconButton aria-label="Like Comment" onClick={handleLike} color={likeColor}>
                                 <FavoriteIcon />
                             </IconButton>
 
